@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "282734534689",
+    "project_id": "glpi-mobile",
+    "storage_bucket": "glpi-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282734534689:android:674807d876b8fe72d3c360",
+        "android_client_info": {
+          "package_name": "com.cfao.glpi4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282734534689-pmm0hgg4jpn7d00g6vhv2e65s3dp9diu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuEUiB3zVgrh6sENZ2Iv7kr7gQTT_ZRpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282734534689-pmm0hgg4jpn7d00g6vhv2e65s3dp9diu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
