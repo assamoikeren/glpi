@@ -85,7 +85,9 @@ class _PhotosState extends State<Photos> {
           );
           imagesData.addTaskImage(ticketImage, taskId);
         }
-      } catch (e) {}
+      } catch (e) {
+        print(e);
+      }
     }
 
     Widget buildPicture(String text) {
@@ -191,7 +193,9 @@ class _PhotosState extends State<Photos> {
                 dialog(context, _keyLoader);
                 if (taskId != null) {
                   if (length < 2) {
+
                     await takePicture(ticketId, taskId: taskId);
+
                     Navigator.pop(context);
                   } else {
                     Navigator.pop(context);

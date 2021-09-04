@@ -14,10 +14,11 @@ class Task with ChangeNotifier {
       this.period,
       this.taskName,
       this.taskContent,
-      this.checked});
+      this.checked: false});
 
   toggleCheck() {
-    this.checked = !this.checked;
+    this.checked == true ? this.checked = false : this.checked = true;
+    // this.checked = !this.checked;
   }
 
   Task.fromJson(Map<String, dynamic> json) {

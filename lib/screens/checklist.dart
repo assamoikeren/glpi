@@ -256,7 +256,7 @@ class _ChecklistState extends State<Checklist> with WidgetsBindingObserver {
                               child: CheckboxListTile(
                                 key: ValueKey(task.taskId),
                                 value: task
-                                    .checked, //selectedTasks.contains(task),
+                                    .checked == true, //selectedTasks.contains(task),
                                 onChanged: (bool newValue) {
                                   print(task.checked);
                                   setState(() {
@@ -439,6 +439,7 @@ class _ChecklistState extends State<Checklist> with WidgetsBindingObserver {
                                             ModalRoute.withName('/workOrders'),
                                             arguments: {
                                               'id': ticket.id,
+                                              'ticket': ticket,
                                               'step_index': index
                                             },
                                           );
@@ -449,6 +450,7 @@ class _ChecklistState extends State<Checklist> with WidgetsBindingObserver {
                                             ModalRoute.withName('/workOrders'),
                                             arguments: {
                                               'id': ticket.id,
+                                              'ticket': ticket,
                                               'back': false,
                                               'itemId': itemId,
                                               'demandeurId': demandeurId
@@ -518,6 +520,7 @@ class _ChecklistState extends State<Checklist> with WidgetsBindingObserver {
                                             ModalRoute.withName('/workOrders'),
                                             arguments: {
                                               'id': ticket.id,
+                                              'ticket': ticket,
                                               'step_index': index
                                             },
                                           );
@@ -528,6 +531,7 @@ class _ChecklistState extends State<Checklist> with WidgetsBindingObserver {
                                             ModalRoute.withName('/workOrders'),
                                             arguments: {
                                               'id': ticket.id,
+                                              'ticket': ticket,
                                               'back': false,
                                               'itemId': itemId,
                                               'demandeurId': demandeurId

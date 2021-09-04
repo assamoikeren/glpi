@@ -195,6 +195,7 @@ class _CloseTicketState extends State<CloseTicket> {
 
     final arguments =
         ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
+    print(arguments['ticket']);
     final Ticket ticket = arguments['ticket'];
     //final demandeurId = arguments['demandeurId'];
     //final itemId = arguments['itemId'];

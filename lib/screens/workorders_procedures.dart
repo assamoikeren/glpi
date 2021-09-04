@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:barcode_scan/barcode_scan.dart';
+import 'package:glpi4/database/moor_database.dart';
 import 'package:provider/provider.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -27,11 +28,12 @@ class _ProcedureState extends State<Procedure> {
         ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
     final ticket = arguments['ticket'];
     final int stepIndex = arguments['step_index'];
+
     final List<proStep.Step> step =
         Provider.of<Tickets>(context, listen: false).findStepById(ticket);
-    final serialNumber = Provider.of<Tickets>(context, listen: false)
-        .findById(ticket)
-        .itemNumber;
+    // final serialNumber = Provider.of<LocalTicketDao>(context, listen: false)
+    //     .findById(ticket)
+    //     .itemNumber;
 
     return WillPopScope(
       onWillPop: () async => false,
@@ -45,7 +47,7 @@ class _ProcedureState extends State<Procedure> {
             stepIndex: stepIndex,
             steps: step,
             stepId: step[stepIndex].id,
-            serialNumber: serialNumber,
+            serialNumber: ticket.itemNumber,
             keyLoader: _keyLoader),
       ),
     );
@@ -112,6 +114,7 @@ class _QrCodeState extends State<QrCode> {
       Navigator.popAndPushNamed(context, Checklist.routeName, arguments: {
         'step': widget.stepIndex,
         'ticketId': widget.ticket,
+        'ticket': widget.ticket,
         'stepId': widget.stepId,
       });
     } else {
